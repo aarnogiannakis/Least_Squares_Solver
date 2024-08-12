@@ -40,9 +40,6 @@ int main(int argc, char *argv[])
   }
 
 
-  // sos kati gnt edo 
-  // A->order = ColMajor; //assume colmajor
-
   // Read the vector b from the file
   array_t *b = array_from_file(argv[2]);
   if (b == NULL){
