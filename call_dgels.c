@@ -40,10 +40,6 @@ int call_dgels(array2d_t * A, array_t * b, double * resnorm, double * rsquared)
 		return -14;
 	}
 
-	// if (resnorm == NULL || rsquared == NULL){
-	// 	return -12;
-	// }
-
 	#define min(a,b) ( (a) < (b) ? (a) : (b) )
 	#define max(a,b) ( (a) > (b) ? (a) : (b) )
 	int nrhs = 1; // b is a vector
@@ -104,23 +100,6 @@ int call_dgels(array2d_t * A, array_t * b, double * resnorm, double * rsquared)
 			return info; 
 		}
 	
-		// original from here
-		// if (m >= n) {
-		// 	double sum_of_squares = 0.0;
-		// 	for (size_t i = n; i < m; i++) {
-		// 		sum_of_squares += b->val[i] * b->val[i];
-		// 	}
-		// 	if (resnorm) {
-		// 		*resnorm = sqrt(sum_of_squares);
-		// 	}
-		// } else { // the system has no residuals
-		// //  This shouldn't happen since m should be >= n for column-major
-		// 	if (resnorm) {
-		// 		*resnorm = 0.0;
-		// 	}
-		// }
-		// ends here
-
 		
     	if (m > n) { // mayve this is redundant, cause we know that m>n
 			double sum_of_squares = 0.0;
@@ -137,9 +116,6 @@ int call_dgels(array2d_t * A, array_t * b, double * resnorm, double * rsquared)
     // Calculate rsquared using the centered original_b
 	// now this makes the problem b is now changed it is not robust, you need the b len of the original
     
-    ;
-	// printf("total sum of squares %f\n", total_sum_of_squares);
-
 	if (resnorm != NULL){
 		*resnorm = computed_resnorm;
 	}
