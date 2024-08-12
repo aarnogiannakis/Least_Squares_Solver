@@ -93,12 +93,6 @@ int main(int argc, char *argv[])
   printf("Residual norm: %f\n", resnorm);
   printf("Coefficient of determination: %f\n", rsquared);
 
-  // not necessary because b is updated to contain the x* in the call_dgels
-  // Prepare the solution array for writing to a file
-  // Since b has been overwritten with the solution x*, which is of length n
-  // array_t x;
-  // x.len = A->shape[1];
-  // x.val = b->val;
 
   // write solution to text
   result = array_to_file(argv[3], b);
