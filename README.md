@@ -9,4 +9,4 @@ in your command line type ./lssolve Data/A1.txt Data/b1.txt Data/x1.txt
 
 ## Acknowledgements
 
-This project was developed as part of [02365 Mathematical Software Programming] at [DTU]. The Makefile and initial project structure were provided by Professor [Martin Skovgaard Andersen]. All code in `call_dgels.c` and `lssolve.c` was written by me as part of the course assignment.
+This project was developed as part of [02365 Mathematical Software Programming] at [DTU]. The Makefile and initial project structure were provided by Professor Martin Skovgaard Andersen. All code in `call_dgels.c` and `lssolve.c` was written by me as part of the course assignment.
